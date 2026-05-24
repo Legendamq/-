@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=109378298', 'ym');
+
+    ym(109378298, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109378298" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АвтоМастер | Автосервис в Тамбове</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        
+        /* Навигация */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .logo { color: white; font-size: 1.6rem; font-weight: 700; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; }
+        .phone { color: white; font-weight: 600; }
+        
+        /* Герой-секция */
+        .hero {
+            height: 100vh;
+            min-height: 550px;
+            background: linear-gradient(135deg, rgba(9,47,51,0.85), rgba(8,29,31,0.75)), 
+                        url('https://static.tildacdn.pub/tild3730-3861-4138-b563-643434643032/photo.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content { max-width: 800px; padding: 0 1.5rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #006fff;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #9c0528; color: white; transform: translateY(-2px); }
+        
+        /* Общие стили */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; }
+        .section-gray { background: #f5f5f5; }
+        .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem; }
+        
+        /* О нас */
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-img { flex: 1; border-radius: 24px; overflow: hidden; }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; }
+        .about-text { flex: 1; text-align: center; }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #259da8;
+            margin: 1rem auto;
+        }
+        
+        /* Карточки услуг */
+        .service-card {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+        .service-card.reverse { flex-direction: row-reverse; }
+        .service-card img { width: 40%; min-width: 250px; object-fit: cover; }
+        .service-info { width: 60%; padding: 2rem; }
+        .service-info h3 { font-size: 1.6rem; margin-bottom: 1rem; color: #1a1a1a; }
+        
+        /* Преимущества */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .feature h4 { margin-bottom: 0.5rem; }
+        
+        /* Контакты */
+        .contacts {
+            background: #ededed;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .contacts h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .contacts p { margin-bottom: 1rem; font-size: 1.1rem; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+        .social-links a { display: inline-block; transition: transform 0.2s; }
+        .social-links a:hover { transform: scale(1.1); }
+        
+        @media (max-width: 768px) {
+            .navbar { background: rgba(0,0,0,0.5); }
+            .nav-links { gap: 1rem; }
+            .hero h1 { font-size: 2rem; }
+            .service-info, .service-card img { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Навигация -->
+<nav class="navbar">
+    <a href="#" class="logo">Автосервис</a>
+    <div class="nav-links">
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+    </div>
+    <div class="phone">📞 +7 900 511 03 28</div>
+</nav>
+
+<!-- Герой -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Автосервис "Авто мастер"</h1>
+        <p>Мы уверены в качестве наших услуг и предоставляем гарантию на выполненные работы до 12 месяцев</p>
+        <a href="#services" class="btn">Наши услуги</a>
+    </div>
+</section>
+
+<!-- О нас -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-img">
+                <img src="https://static.tildacdn.pub/tild6438-6534-4138-b730-663066616265/photo.jpg" alt="Автосервис">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title" style="margin-bottom: 0.5rem;">О нашей компании</h2>
+                <div class="divider"></div>
+                <p style="margin-top: 1rem; line-height: 1.6;">Мы — "АвтоМастер", надежный автосервис, который активно работает с автовладельцами, ценящими качество и безопасность. Наша команда гордится высоким уровнем профессионализма, честностью и заботой о клиенте. Каждый автомобиль заслуживает лучшего!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги -->
+<section id="services" class="section section-gray">
+    <div class="container">
+        <h2 class="section-title">Наши услуги</h2>
+        
+        <div class="service-card">
+            <img src="https://static.tildacdn.pub/tild6330-3539-4335-a137-663137326536/orig.jpg" alt="Ремонт кузовов">
+            <div class="service-info">
+                <h3>🔧 Ремонт кузовов</h3>
+                <p>Комплексное восстановление внешнего вида автомобиля: устранение вмятин, царапин, сколов и коррозии. Полная покраска кузова с использованием качественных материалов.</p>
+            </div>
+        </div>
+        
+        <div class="service-card reverse">
+            <img src="https://static.tildacdn.pub/tild3737-3866-4161-b835-666561333839/photo.jpg" alt="Ремонт КПП">
+            <div class="service-info">
+                <h3>⚙️ Ремонт КПП</h3>
+                <p>Диагностика, ремонт и замена деталей механических и автоматических коробок передач. Опытные механики и современное оборудование.</p>
+            </div>
+        </div>
+        
+        <div class="service-card">
+            <img src="https://static.tildacdn.pub/tild3835-6637-4063-a339-313963343634/1.jpg" alt="Ремонт электроники">
+            <div class="service-info">
+                <h3>💻 Ремонт электроники</h3>
+                <p>Восстановление систем управления двигателем, мультимедийных систем и датчиков безопасности. Быстрая и точная диагностика.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Преимущества -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Почему мы?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">👨‍🔧</div>
+                <h4>Профессиональная команда</h4>
+                <p>Высококвалифицированные специалисты с многолетним опытом работы</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔧</div>
+                <h4>Современное оборудование</h4>
+                <p>Новейшее диагностическое и ремонтное оборудование</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📋</div>
+                <h4>Гарантия на услуги</h4>
+                <p>Гарантия до 12 месяцев на все выполненные работы</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">☕</div>
+                <h4>Комфорт и удобства</h4>
+                <p>Уютная зона ожидания, Wi-Fi, кофе, гибкая система записи</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Цитата -->
+<section class="section section-gray" style="padding: 60px 0;">
+    <div class="container" style="text-align: center;">
+        <div class="divider" style="margin: 0 auto 1.5rem auto;"></div>
+        <p style="font-size: 1.2rem; font-style: italic;">Наша команда профессионалов сделает работу очень качественно и быстро</p>
+        <div class="divider" style="margin: 1.5rem auto 0 auto;"></div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section id="contact" class="contacts">
+    <div class="container">
+        <h3>📞 +7 900 511 03 28</h3>
+        <p>✉️ andrejkireev94@gmail.com</p>
+        <p>📍 <strong>г. Тамбов, ул. Советская, д. 6</strong></p>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p style="font-size: 1.1rem;">Ваш автомобиль — наша забота! 🚗</p>
+        <div class="social-links">
+            <a href="#">🐦 Twitter</a>
+            <a href="#">📘 VK</a>
+            <a href="#">💬 Telegram</a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
